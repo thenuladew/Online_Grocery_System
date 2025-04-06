@@ -36,22 +36,6 @@ Java Web Technologies: Developed with Spring Boot.
 
 UI Design: Interactive and responsive UIs created with HTML5, CSS, and JavaScript.
 
-📂 Project Structure
-text
-src/
-├── main/
-│   ├── java/
-│   │   └── com.grocery/
-│   │       ├── model/
-│   │       ├── service/
-│   │       ├── controller/
-│   │       ├── util/
-│   └── resources/
-│       ├── static/
-│       └── templates/
-💻 Development Environment
-Languages: Java, HTML/CSS, JavaScript
-
 Frameworks: Spring Boot, Bootstrap/Tailwind CSS
 
 IDE: IntelliJ IDEA
@@ -59,26 +43,3 @@ IDE: IntelliJ IDEA
 Data Storage: File-based (CSV files)
 
 Source Control: GitHub
-
-🚀 How It Works
-Product Management: Manage products (CRUD operations) via file-based persistence.
-
-Shopping Cart and Checkout: Customers can add items to their cart, view cart details, and confirm the order.
-
-Order Processing: Admin processes orders sequentially through a queue.
-
-Sorting: Products are sorted dynamically by price or category using Merge Sort.
-
-📊 Future Enhancements
-Add user authentication and role-based access (e.g., customer vs. admin).
-
-Implement advanced reporting for product sales and trends.
-
-Improve file structure for scalability.
-
-Support additional file formats (e.g., JSON or XML).
-
-🤝 Contributing
-We welcome contributions to improve this project! Please feel free to fork the repository, submit issues, or propose new features via pull requests.
-
-This description is ready to be added to your GitHub repository's README. Would you like to include more specific instructions, such as how to run the application locally?
