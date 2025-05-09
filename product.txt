@@ -1,0 +1,3 @@
+1|Organic Apples|Fresh organic apples from local farms|https://example.com/images/apples.jpg|50|2.99|Fruits
+2|Organic UPDATE|Fresh organic apples from local farms|https://s3.eu-west-2.amazonaws.com/staticgh.gentinghotel.co.uk/uploads/hero/SuiteNov2022_0008_1920.jpg|502|2.99|Fruits
+3|Organic asdadSD|Fresh organic apples from local farms|https://example.com/images/apples.jpg|50|2.99|Fruits

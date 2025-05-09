@@ -1,0 +1,3 @@
+1|Jane Smith|456 Park Avenue, New York|jane@example.com|+1234567890|securePassword123
+2|Gimhan Rajapaksha|123 Main Street, Colombo|gimhantharuke456@gmail.com|0770828612|071656Ad@
+3|Thenula|no113|thenulive@outlook.com|0701062358|01030406
