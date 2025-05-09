@@ -1,4 +1,4 @@
-package com.grocery.system.model;
+package com.grocery.system.dto;
 
 public class Product {
     private String productID;
