@@ -1,4 +1,8 @@
-🛒 Online Grocery Order Management System
+
+![UrbanCart](https://github.com/user-attachments/assets/fd863811-69f4-4a44-a643-56d6dedb5c14)
+
+
+🛒 Online Grocery Order Management System (UrbanCart)
 Online Grocery Order Management System is a web-based application built using Java and Spring Boot to streamline the process of managing grocery orders. Designed for simplicity and efficiency, this application enables customers to browse products, create orders, and manage their shopping processes while allowing administrators to efficiently process orders. The application uses file-based storage instead of a database and incorporates data structures like Queues and sorting algorithms like Merge Sort to handle customer orders and product listings effectively.
 
 📝 Features
