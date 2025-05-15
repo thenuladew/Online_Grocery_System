@@ -23,7 +23,7 @@ Sorting Products: Sort groceries dynamically by category or price using Merge So
 General:
 User-Friendly Interface: Built with responsive design using HTML, CSS (Tailwind/Bootstrap), and JavaScript.
 
-File-based Persistence: Implements CSV file I/O for data storage, eliminating the need for a database.
+File-based Persistence: Implements txt file I/O for data storage, eliminating the need for a database.
 
 Data Structures and Algorithms: Efficient order queue management and product sorting.
 
@@ -34,7 +34,7 @@ Data Structures: Uses a custom Queue to handle order processing.
 
 Algorithm: Implements Merge Sort for sorting products by price or category.
 
-File Handling: Reads and writes to CSV files for persistence.
+File Handling: Reads and writes to txt files for persistence.
 
 Java Web Technologies: Developed with Spring Boot.
 
@@ -44,6 +44,6 @@ Frameworks: Spring Boot, Bootstrap/Tailwind CSS
 
 IDE: IntelliJ IDEA
 
-Data Storage: File-based (CSV files)
+Data Storage: File-based (txt files)
 
 Source Control: GitHub
