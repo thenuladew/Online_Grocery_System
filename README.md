@@ -40,7 +40,7 @@ Java Web Technologies: Developed with Spring Boot.
 
 UI Design: Interactive and responsive UIs created with HTML5, CSS, and JavaScript.
 
-Frameworks: Spring Boot, Bootstrap/Tailwind CSS
+Frameworks: Spring Boot, Tailwind CSS
 
 IDE: IntelliJ IDEA
 
