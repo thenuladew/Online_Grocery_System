@@ -21,7 +21,7 @@ Product Management: Add, update, and delete product information.
 Sorting Products: Sort groceries dynamically by category or price using Merge Sort.
 
 General:
-User-Friendly Interface: Built with responsive design using HTML, CSS (Tailwind/Bootstrap), and JavaScript.
+User-Friendly Interface: Built with responsive design using HTML, CSS (Tailwind), and JavaScript.
 
 File-based Persistence: Implements txt file I/O for data storage, eliminating the need for a database.
 
