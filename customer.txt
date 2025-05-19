@@ -1,0 +1,7 @@
+1|Jane Smith|456 Park Avenue, New York|jane@example.com|01234567890|securePassword123
+2|Gimhan Rajapaksha|123 Main Street, Colombo|gimhantharuke456@gmail.com|0770828612|071656Ad@
+3|Poojana|88/8 , Isuru Mawatha, Deniyaya, Matara|janudahewa@gmail.com|07153156489|123456
+4|Sarani|616/2, Kurunegala Rd, Dambulla.|sarani@gmail.com|07153156489|123456
+5|PoojanaJa|88/8 , Isuru Mawatha, Deniyaya, Matara|yzeelk@gmail.com|07153156489|123456789
+6|Chandana|Mihira, Pahala Vitiyala Rd, Thihagoda, Matara|chandana@gmail.com|0715303647|123456
+8|Ihara|No.888/6,Temple Road,Ella|ihara@gmail.com|0717885466|123456

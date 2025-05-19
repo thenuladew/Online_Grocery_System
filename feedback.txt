@@ -1,0 +1,9 @@
+1|Good Product|5|4|4
+2|Quality is excellent!|5|1|8
+3|Was not in good shape|2|2|1
+4|Tasty!|4|3|2
+6|Was attacked by ants :( |2|5|4
+7|Fresh Product will buy again|4|6|5
+8|Good quality|4|6|6
+9|Resonable price|4|4|3
+10|Fresh!|5|2|3
