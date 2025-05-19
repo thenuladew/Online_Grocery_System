@@ -4,28 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Animated Background */
         body {
-            background: linear-gradient(-45deg, #10b981, #34d399, #059669, #047857);
-            background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            min-height: 100vh;
+            overflow: hidden;
+            font-family: 'Koulen', Arial, sans-serif;
         }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .photo-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .photo-bg img {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            filter: blur(6px) brightness(0.8);
+        }
+        .photo-bg::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(16, 24, 32, 0.4);
+            z-index: 1;
+        }
+        .main-content {
+            position: relative;
+            z-index: 2;
         }
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-4">
-
-<div class="w-full max-w-md bg-white rounded-lg shadow-xl p-8 text-center">
+    <div class="photo-bg">
+        <img src="https://i.pinimg.com/736x/cb/3f/29/cb3f295cdda243a045d145b1eb0004dc.jpg" alt="Grocery background" />
+    </div>
+    <div class="main-content w-full max-w-md bg-white rounded-lg shadow-xl p-8 text-center">
 
     <!-- Welcome Title -->
-    <h1 class="text-2xl font-bold mb-2 text-green-700">Create Account</h1>
+    <h1 class="text-2xl mb-2 text-green-700">Create Account</h1>
     <p class="text-gray-600 mb-6">Sign up to start shopping.</p>
 
     <!-- Name Input -->
@@ -75,7 +104,7 @@
 
     <!-- Submit Button -->
     <button onclick="handleRegister()"
-            class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md transition duration-200">
+            class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md transition duration-200">
         Register
     </button>
 

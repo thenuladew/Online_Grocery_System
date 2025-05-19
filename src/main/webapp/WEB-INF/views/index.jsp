@@ -8,15 +8,45 @@
 </head>
 <body class="bg-gray-100">
 
-<style>
+<jsp:include page="common/loader.jsp" />
 
+<style>
     .header {
         position: sticky;
         top: 0;
         z-index: 100;
-  }
+    }
+    #loaderOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #10b981;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.7s ease;
+    }
+    #loaderOverlay.fade-out {
+        opacity: 0;
+        pointer-events: none;
+    }
+    #mainContent {
+        opacity: 0;
+        transition: opacity 0.7s ease;
+    }
+    #mainContent.visible {
+        opacity: 1;
+    }
 </style>
 
+<div id="loaderOverlay">
+    <jsp:include page="common/loader.jsp" />
+</div>
+
+<div id="mainContent" style="display:none;">
 
 <div class="header">
     <jsp:include page="common/navbarDash.jsp"/>
@@ -63,6 +93,7 @@
     </div>
 
     <jsp:include page="feedbacks.jsp"/>
+</div>
 </div>
 
 <script>
@@ -244,6 +275,24 @@
         const sortedProducts = mergeSort([...allProducts], key);
         renderProducts(sortedProducts);
     }
+</script>
+
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+    const loader = document.getElementById('loaderOverlay');
+    const mainContent = document.getElementById('mainContent');
+    setTimeout(function() {
+        loader.classList.add('fade-out');
+        setTimeout(function() {
+            loader.style.background = 'transparent';
+            loader.style.display = 'none';
+            mainContent.style.display = '';
+            setTimeout(function() {
+                mainContent.classList.add('visible');
+            }, 10);
+        }, 700); // match the CSS transition
+    }, 3000); // 3 seconds
+});
 </script>
 
 </body>
