@@ -4,7 +4,7 @@ import com.example.groccery.models.Supplier;
 
 public class SupplierDTOs {
 
-    // DTO for incoming supplier request (used in create or update)
+    // DTO
     public static class SupplierRequest {
 
         private String name;
@@ -15,7 +15,7 @@ public class SupplierDTOs {
 
         public SupplierRequest() {}
 
-        // Getters for all fields (no setters needed if using JSON deserialization)
+        // Getters for all fields
 
         public String getName() {
             return name;
