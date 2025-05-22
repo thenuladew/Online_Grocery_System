@@ -1,4 +1,2 @@
-<<<<<<< Updated upstream
-=======
 1;Poojana;janudahewa@gmail.com;88/8 , Isuru Mawatha, Deniyaya, Matara;Processing;2025-05-22;1,1|2,2|6,1
->>>>>>> Stashed changes
+
