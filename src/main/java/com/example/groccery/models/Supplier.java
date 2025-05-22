@@ -8,19 +8,21 @@ public class Supplier {
     private String address;
     private String companyName;
     private String businessRegistrationNumber;
+    private String staffId;
 
     // Default constructor
     public Supplier() {}
 
     // Parameterized constructor (all fields)
     public Supplier(String id, String name, String contactNumber, String address,
-                    String companyName, String businessRegistrationNumber) {
+                    String companyName, String businessRegistrationNumber, String staffId) {
         this.id = id;
         this.name = name;
         this.contactNumber = contactNumber;
         this.address = address;
         this.companyName = companyName;
         this.businessRegistrationNumber = businessRegistrationNumber;
+        this.staffId = staffId;
     }
 
     // Getters and Setters
@@ -71,5 +73,13 @@ public class Supplier {
 
     public void setBusinessRegistrationNumber(String businessRegistrationNumber) {
         this.businessRegistrationNumber = businessRegistrationNumber;
+    }
+
+    public String getStaffId() {
+        return staffId;
+    }
+
+    public void setStaffId(String staffId) {
+        this.staffId = staffId;
     }
 }

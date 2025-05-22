@@ -85,6 +85,7 @@
                 <select id="statusFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
                     <option value="all">All Statuses</option>
                     <option value="Pending">Pending</option>
+                    <option value="Processing">Processing</option>
                     <option value="Shipped">Shipped</option>
                     <option value="Delivered">Delivered</option>
                     <option value="Cancelled">Cancelled</option>
@@ -318,11 +319,10 @@
                     statusIcon = "clock";
                     break;
                 case "processing":
-                    statusColor = "bg-blue-100 text-blue-800";
+                    statusColor = "bg-purple-100 text-purple-800";
                     statusIcon = "cog";
                     break;
                 case "shipped":
-                case "asdadshipped":
                     statusColor = "bg-blue-100 text-blue-800";
                     statusIcon = "truck";
                     break;

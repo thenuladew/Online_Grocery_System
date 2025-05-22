@@ -56,6 +56,7 @@
                 <th class="py-3 px-4 text-left">Address</th>
                 <th class="py-3 px-4 text-left">Company</th>
                 <th class="py-3 px-4 text-left">BRN</th>
+                <th class="py-3 px-4 text-left">Added By</th>
                 <th class="py-3 px-4 text-left">Actions</th>
             </tr>
             </thead>
@@ -71,19 +72,34 @@
     const suppliersTable = document.getElementById("suppliersTable");
     const suppliersBody = document.getElementById("suppliersBody");
     const searchInput = document.getElementById("searchInput");
+    let staffMap = new Map(); // To store staff member details
+
+    // Load staff members
+    function loadStaff() {
+        return fetch("/api/staff")
+            .then(response => response.json())
+            .then(staff => {
+                staff.forEach(member => {
+                    staffMap.set(member.id, member.name);
+                });
+            });
+    }
 
     // Load suppliers on page load
     window.onload = function () {
-        fetch("/api/suppliers")
-            .then(function (response) {
-                return response.json();
+        // First load staff members
+        loadStaff()
+            .then(() => {
+                // Then load suppliers
+                return fetch("/api/suppliers");
             })
-            .then(function (suppliers) {
+            .then(response => response.json())
+            .then(suppliers => {
                 renderSuppliers(suppliers);
             })
-            .catch(function (error) {
-                console.error("Error fetching suppliers:", error);
-                loadingDiv.textContent = "Failed to load suppliers.";
+            .catch(error => {
+                console.error("Error:", error);
+                loadingDiv.textContent = "Failed to load data.";
             });
     };
 
@@ -107,13 +123,14 @@
         if (filtered.length === 0) {
             var row = document.createElement("tr");
             row.innerHTML =
-                "<td colspan='6' class='py-4 px-6 text-center text-gray-500'>No suppliers found.</td>";
+                "<td colspan='7' class='py-4 px-6 text-center text-gray-500'>No suppliers found.</td>";
             suppliersBody.appendChild(row);
             return;
         }
 
         filtered.forEach(function (supplier) {
             var row = document.createElement("tr");
+            const staffName = staffMap.get(supplier.staffId) || "Unknown";
 
             row.innerHTML =
                 "<td class='py-3 px-4 border-b'>" + escapeHtml(supplier.name) + "</td>" +
@@ -121,6 +138,7 @@
                 "<td class='py-3 px-4 border-b'>" + escapeHtml(supplier.address) + "</td>" +
                 "<td class='py-3 px-4 border-b'>" + escapeHtml(supplier.companyName) + "</td>" +
                 "<td class='py-3 px-4 border-b'>" + escapeHtml(supplier.businessRegistrationNumber) + "</td>" +
+                "<td class='py-3 px-4 border-b'>" + escapeHtml(staffName) + "</td>" +
                 "<td class='py-3 px-4 border-b'>" +
                 "<div class='flex space-x-2'>" +
                 "<button onclick=\"editSupplier('" + escapeHtml(supplier.id) + "')\" " +

@@ -23,6 +23,21 @@
     <!-- Page Title -->
     <h1 class="text-3xl font-bold mb-6 text-green-700">All Customer Feedbacks</h1>
 
+    <!-- Search Bar -->
+    <div class="mb-6">
+        <div class="flex gap-4">
+            <div class="flex-1">
+                <input type="text" id="searchInput" 
+                       placeholder="Search by customer name or product name..."
+                       class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+            </div>
+            <button onclick="clearSearch()" 
+                    class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition duration-200">
+                Clear
+            </button>
+        </div>
+    </div>
+
     <!-- Loading Spinner -->
     <div id="loading" class="text-center text-green-600 font-semibold mb-4">
         Loading feedbacks...
@@ -32,11 +47,19 @@
     <div id="feedbackGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 hidden">
         <!-- Feedback cards will be inserted here -->
     </div>
+
+    <!-- No Results Message -->
+    <div id="noResults" class="text-center text-gray-500 text-lg hidden">
+        No feedbacks found matching your search.
+    </div>
 </div>
 
 <script>
     const loadingDiv = document.getElementById("loading");
     const feedbackGrid = document.getElementById("feedbackGrid");
+    const noResultsDiv = document.getElementById("noResults");
+    const searchInput = document.getElementById("searchInput");
+    let allFeedbacks = [];
 
     // Load feedbacks on page load
     window.onload = function () {
@@ -45,6 +68,7 @@
                 return response.json();
             })
             .then(function (feedbacks) {
+                allFeedbacks = feedbacks;
                 renderFeedbacks(feedbacks);
             })
             .catch(function (error) {
@@ -53,17 +77,45 @@
             });
     };
 
+    // Add search input event listener
+    searchInput.addEventListener('input', function() {
+        filterFeedbacks(this.value.trim());
+    });
+
+    
+    function filterFeedbacks(searchTerm) {
+        if (!searchTerm) {
+            renderFeedbacks(allFeedbacks);
+            return;
+        }
+
+        const filteredFeedbacks = allFeedbacks.filter(feedback => {
+            const customerName = feedback.user ? feedback.user.name.toLowerCase() : 'anonymous';
+            const productName = feedback.product.name.toLowerCase();
+            const searchLower = searchTerm.toLowerCase();
+
+            return customerName.includes(searchLower) || productName.includes(searchLower);
+        });
+
+        renderFeedbacks(filteredFeedbacks);
+    }
+
+    // Clear search and show all feedbacks
+    function clearSearch() {
+        searchInput.value = '';
+        renderFeedbacks(allFeedbacks);
+    }
+
     // Render feedbacks into cards
     function renderFeedbacks(feedbacks) {
         feedbackGrid.innerHTML = "";
         loadingDiv.classList.add("hidden");
         feedbackGrid.classList.remove("hidden");
+        noResultsDiv.classList.add("hidden");
 
         if (feedbacks.length === 0) {
-            var noData = document.createElement("div");
-            noData.className = "col-span-full text-center text-gray-500 text-lg";
-            noData.textContent = "No feedbacks found.";
-            feedbackGrid.appendChild(noData);
+            feedbackGrid.classList.add("hidden");
+            noResultsDiv.classList.remove("hidden");
             return;
         }
 

@@ -52,6 +52,16 @@
             <p id="brnError" class="text-red-500 text-xs mt-1 hidden">Enter a valid BRN (e.g., BRN123456).</p>
         </div>
 
+        <div>
+            <label class="block text-sm font-medium text-gray-700">Added By Staff Member</label>
+            <select id="staffId" required
+                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500">
+                <option value="">Select a staff member</option>
+                <!-- Staff members will be loaded here dynamically -->
+            </select>
+            <p id="staffError" class="text-red-500 text-xs mt-1 hidden">Please select a staff member.</p>
+        </div>
+
         <button type="submit"
                 class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md transition duration-200">
             Create Supplier
@@ -60,6 +70,25 @@
 </div>
 
 <script>
+    // Load staff members when the page loads
+    window.onload = function() {
+        fetch("/api/staff")
+            .then(response => response.json())
+            .then(staff => {
+                const staffSelect = document.getElementById("staffId");
+                staff.forEach(member => {
+                    const option = document.createElement("option");
+                    option.value = member.id;
+                    option.textContent = member.name;
+                    staffSelect.appendChild(option);
+                });
+            })
+            .catch(error => {
+                console.error("Error loading staff:", error);
+                alert("Failed to load staff members. Please try again.");
+            });
+    };
+
     document.getElementById("supplierForm").addEventListener("submit", function (e) {
         e.preventDefault();
 
@@ -68,6 +97,7 @@
         const address = document.getElementById("address").value.trim();
         const companyName = document.getElementById("companyName").value.trim();
         const businessRegistrationNumber = document.getElementById("businessRegistrationNumber").value.trim();
+        const staffId = document.getElementById("staffId").value;
 
         let isValid = true;
 
@@ -104,6 +134,11 @@
             isValid = false;
         }
 
+        if (!staffId) {
+            document.getElementById("staffError").classList.remove("hidden");
+            isValid = false;
+        }
+
         if (!isValid) return;
 
         const supplierData = {
@@ -111,7 +146,8 @@
             contactNumber: contactNumber,
             address: address,
             companyName: companyName,
-            businessRegistrationNumber: businessRegistrationNumber
+            businessRegistrationNumber: businessRegistrationNumber,
+            staffId: staffId
         };
 
         fetch("/api/suppliers", {
