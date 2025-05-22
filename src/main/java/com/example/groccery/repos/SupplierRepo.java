@@ -36,9 +36,15 @@ public class SupplierRepo {
 
         for (String line : lines) {
             String[] parts = line.split("\\|");
-            if (parts.length == 6) {
+            if (parts.length == 7) {
                 Supplier supplier = new Supplier(
-                        parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]
+                        parts[0], // staff id
+                        parts[1], // name
+                        parts[2], // contact Number
+                        parts[3], // address
+                        parts[4], // companyName
+                        parts[5], //  BRN
+                        parts[6]  // staffId
                 );
                 suppliers.add(supplier);
             }
@@ -91,7 +97,8 @@ public class SupplierRepo {
                     s.getContactNumber(),
                     s.getAddress(),
                     s.getCompanyName(),
-                    s.getBusinessRegistrationNumber()
+                    s.getBusinessRegistrationNumber(),
+                    s.getStaffId()
             ));
         }
         Files.write(Paths.get(FILE_NAME), lines);
