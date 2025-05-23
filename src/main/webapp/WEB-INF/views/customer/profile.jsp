@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Abel&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body class="bg-gray-50 min-h-screen text-gray-800">
@@ -15,9 +16,11 @@
 <div class="max-w-4xl mx-auto px-4 py-8">
     <!-- Back Button -->
     <div class="mb-6">
-        <a href="/"
-           class="inline-flex items-center gap-2 bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-200 shadow">
-            <i class="fas fa-arrow-left"></i> Back to Products
+        <a href="/" class="font-bold text-black-700 flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            <span>Back to Shopping</span>
         </a>
     </div>
 
@@ -32,7 +35,7 @@
     <!-- Profile Card -->
     <div id="profileCard" class="hidden bg-white shadow-lg rounded-xl p-8 border border-gray-100">
         <div class="flex items-center justify-between mb-6">
-            <h1 class="text-2xl font-bold text-indigo-700">Your Profile</h1>
+            <h1 class="text-2xl text-green-700 font-['Koulen']">Your Profile</h1>
             <div class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
                 Active
             </div>
@@ -66,17 +69,17 @@
 
         <div class="mt-8 flex flex-wrap gap-4">
             <button onclick="editProfile()"
-                    class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-2 px-5 rounded-lg transition duration-200 shadow">
+                    class="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white py-2 px-5 rounded-lg transition duration-200 shadow font-['Koulen']">
                 <i class="fas fa-pen"></i> Edit Profile
             </button>
 
             <button onclick="logoutUser()"
-                    class="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white py-2 px-5 rounded-lg transition duration-200 shadow">
+                    class="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white py-2 px-5 rounded-lg transition duration-200 shadow font-['Koulen']">
                 <i class="fas fa-sign-out-alt"></i> Logout
             </button>
 
             <button onclick="deleteAccount()"
-                    class="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white py-2 px-5 rounded-lg transition duration-200 shadow">
+                    class="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white py-2 px-5 rounded-lg transition duration-200 shadow font-['Koulen']">
                 <i class="fas fa-trash"></i> Delete Account
             </button>
         </div>

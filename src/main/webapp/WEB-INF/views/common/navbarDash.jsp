@@ -1,24 +1,171 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<nav class="bg-white border-gray-200 px-4 py-4 shadow-md">
-    <div class="flex justify-between items-center max-w-6xl mx-auto">
-        <!-- Title -->
-        <div class="text-xl font-bold text-green-700">
-            UrbanCart
+<header class="header">  
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Abel', sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        min-height: 100vh;
+      }
+
+      /* Header */
+      .header {
+        background-color: #00AC47;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1px;
+        box-shadow: none;
+      }
+
+      /* Logo on the Left */
+      .logo-container {
+        display: flex;
+        align-items: center;
+        margin-left: 18px;
+      }
+
+      .logo {
+        width: 200px; /* Adjust logo width as needed */
+        height: auto;
+      }
+
+      /* Search Bar in the Middle */
+      .search-bar {
+        flex: 1;
+        margin: 0 24px;
+        max-width: 500px; /* Adjust search bar width as needed */
+      }
+
+      .search-input {
+        width: 100%;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 16px;
+        font-family: 'Abel', sans-serif;
+        font-size: 16px;
+        outline: none;
+      }
+
+      /* Buttons on the Right */
+      .header-buttons {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        margin-right: 24px; /* Move buttons slightly to the middle */
+      }
+
+      /* Profile Button */
+      .profile-button {
+        background-color: #ffffff;
+        border: none;
+        border-radius: 16px; /* Changed to rectangle with 16px corner radius */
+        padding: 8px 16px; /* Adjusted padding for rectangular shape */
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px; /* Space between icon and text */
+      }
+
+      .profile-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      /* Cart Button */
+      .cart-button {
+        background-color: #FFFFFF;
+        border: none;
+        border-radius: 16px; /* Changed to rectangle with 16px corner radius */
+        padding: 8px 16px; /* Adjusted padding for rectangular shape */
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px; /* Space between icon and text */
+      }
+
+      .cart-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      /* Dropdown Menu */
+      .profile-dropdown {
+        position: relative;
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #2B2B2B; /* Default dropdown background color */
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 16px; /* Added corner radius */
+        overflow: hidden; /* Ensures the radius is applied to child elements */
+      }
+
+      .dropdown-content a {
+        color: #ffffff; /* White text for better contrast */
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-family: 'Koulen', sans-serif; /* Koulen font for dropdown */
+        font-size: 16px;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #00AC47; /* Hover background color */
+      }
+
+      .profile-dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      /* Footer */
+      .footer {
+        text-align: right;
+        padding: 16px;
+        background-color: #ffffff;
+        margin-top: 24px;
+      }
+
+      .footer-text {
+        font-size: 14px;
+        color: #666;
+      }
+
+      .main-content {
+        flex: 1;
+      }
+    </style>
+
+    
+
+      <!-- Logo on the Left -->
+      <a href="/">  
+        <div class="logo-container">
+          <img src="./images/UrbanCart_Admin_long.png" alt="Logo" class="logo">
         </div>
+      </a>
 
-        <!-- Search Bar -->
+      <!-- Search Bar in the Middle -->
+      <div class="search-bar">
+        <input id="searchInput" type="text" placeholder="Search..." class="search-input">
+      </div>
 
-        <div class="flex-1 mx-4">
-            <input type="text" id="searchInput"
-                placeholder="Search by Name or Category"
-                class="w-full px-4 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500">
-        </div>
-
-        <!-- Nav Buttons -->
-        <div class="flex items-center space-x-6">
-
-            <!-- Conditional Login / Profile -->
-            <script>
+      <!-- Buttons on the Right -->
+      <div class="header-buttons">
+        
+        <script>
                 // Get userId from localStorage
                 const userId = localStorage.getItem("userId");
                 console.log("user Id" +userId)
@@ -29,31 +176,36 @@
                         // Show Profile and My Orders
                         navButtons.innerHTML += `
 
-                            <a href="/cart" class="text-gray-700 hover:text-green-600 transition duration-200">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                                </svg>
-                            </a>
-                            
-                            <a href="/my-orders"
-                               class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-200 mr-2">
-                                My Orders
-                            </a>
-                            <a href="/profile"
-                               class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition duration-200">
-                                Profile
-                            </a>
+                          <!-- View Cart Button -->
+                          <a href="/cart">
+                            <button class="cart-button">
+                              <img src="./images/cart.png" alt="View Cart" class="cart-icon">
+                            </button>
+                          </a> 
+
+                          <!-- Profile Button with Dropdown -->
+                          <div class="profile-dropdown">
+                              <button class="profile-button">
+                                <img src="./images/user.png" alt="Profile" class="profile-icon">
+                              </button>
+                            <div class="dropdown-content">
+                              <a href="/profile">VIEW PROFILE</a>
+                              <a href="/my-orders">ORDER HISTORY</a>
+                            </div>
+                          </div>
                         `;
                 } else {
                     // Show Login
                     navButtons.innerHTML += `
                         <a href="/login"
-                           class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-200">
+                           class="px-5 py-2 bg-[#3d3d3d] text-white rounded-md hover:bg-[#2b2b2b] transition duration-200 font-['Koulen']">
                             Login
                         </a>
                     `;
                 }
             </script>
-        </div>
-    </div>
-</nav>
+        
+        
+      </div>
+</header>
+   

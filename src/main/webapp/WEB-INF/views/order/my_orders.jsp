@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>My Orders</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Abel&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
@@ -15,10 +16,10 @@
 
 <div class="max-w-6xl mx-auto px-4 py-8">
     <div class="flex justify-between items-center mb-8">
-        <h1 class="text-3xl font-bold text-green-700 flex items-center">
+        <h1 class="text-3xl text-green-700 flex items-center font-['Koulen']">
             <i class="fas fa-box-open mr-3"></i>My Orders
         </h1>
-        <a href="/" class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg transition duration-200 flex items-center">
+        <a href="/" class="bg-green-600 hover:bg-green-700 font-['Koulen'] text-white py-2 px-4 rounded-lg transition duration-200 flex items-center">
             <i class="fas fa-shopping-basket mr-2"></i> Continue Shopping
         </a>
     </div>

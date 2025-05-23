@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Create Product</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Abel&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
@@ -13,57 +14,57 @@
     <!-- Back Button -->
     <div class="mb-4 text-right">
         <a href="/products"
-           class="inline-block bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-700 transition duration-200">
+           class="inline-block bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-700 transition duration-200 font-['Koulen']">
             &larr; Back
         </a>
     </div>
 
-    <h1 class="text-2xl font-bold mb-6 text-green-700">Create New Product</h1>
+    <h1 class="text-2xl text-green-700 mb-6 font-['Koulen']">Create New Product</h1>
 
     <form id="productForm" class="space-y-4">
         <div>
-            <label class="block text-sm font-medium text-gray-700">Name</label>
+            <label class="block text-sm font-medium text-gray-700 font-['Abel']">Name</label>
             <input type="text" id="name" required
-                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 font-['Abel']"
                    placeholder="Organic Apples">
-            <p id="nameError" class="text-red-500 text-xs mt-1 hidden">Enter a valid name.</p>
+            <p id="nameError" class="text-red-500 text-xs mt-1 hidden font-['Abel']">Enter a valid name.</p>
         </div>
 
         <div>
-            <label class="block text-sm font-medium text-gray-700">Description</label>
+            <label class="block text-sm font-medium text-gray-700 font-['Abel']">Description</label>
             <textarea id="description" rows="3"
-                      class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+                      class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 font-['Abel']"
                       placeholder="Describe the product..."></textarea>
-            <p id="descError" class="text-red-500 text-xs mt-1 hidden">Description must be at least 10 characters.</p>
+            <p id="descError" class="text-red-500 text-xs mt-1 hidden font-['Abel']">Description must be at least 10 characters.</p>
         </div>
 
         <div>
-            <label class="block text-sm font-medium text-gray-700">Image URL</label>
+            <label class="block text-sm font-medium text-gray-700 font-['Abel']">Image URL</label>
             <input type="text" id="imageUrl"
-                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 font-['Abel']"
                    placeholder="https://example.com/images/apples.jpg">
-            <p id="imageError" class="text-red-500 text-xs mt-1 hidden">Enter a valid image URL.</p>
+            <p id="imageError" class="text-red-500 text-xs mt-1 hidden font-['Abel']">Enter a valid image URL.</p>
         </div>
 
         <div>
-            <label class="block text-sm font-medium text-gray-700">Stock Quantity</label>
+            <label class="block text-sm font-medium text-gray-700 font-['Abel']">Stock Quantity</label>
             <input type="number" id="inStockQuantity" min="0"
-                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 font-['Abel']"
                    placeholder="50">
-            <p id="quantityError" class="text-red-500 text-xs mt-1 hidden">Enter a valid quantity.</p>
+            <p id="quantityError" class="text-red-500 text-xs mt-1 hidden font-['Abel']">Enter a valid quantity.</p>
         </div>
 
         <div>
-            <label class="block text-sm font-medium text-gray-700">Price (LKR)</label>
+            <label class="block text-sm font-medium text-gray-700 font-['Abel']">Price (LKR)</label>
             <input type="number" id="price" step="0.01" min="0"
-                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 font-['Abel']"
                    placeholder="2.99">
-            <p id="priceError" class="text-red-500 text-xs mt-1 hidden">Enter a valid price.</p>
+            <p id="priceError" class="text-red-500 text-xs mt-1 hidden font-['Abel']">Enter a valid price.</p>
         </div>
 
         <div>
-            <label class="block text-sm font-medium text-gray-700">Category</label>
-            <select id="category" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500">
+            <label class="block text-sm font-medium text-gray-700 font-['Abel']">Category</label>
+            <select id="category" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 font-['Abel']">
                 <option value="">Select a category</option>
                 <option value="Meat & Fish">Meat & Fish</option>
                 <option value="Grains & Bread">Grains & Bread</option>
@@ -72,20 +73,20 @@
                 <option value="Dairy & Eggs">Dairy & Eggs</option>
                 <option value="Condiments">Condiments</option>
             </select>
-            <p id="categoryError" class="text-red-500 text-xs mt-1 hidden">Please select a category.</p>
+            <p id="categoryError" class="text-red-500 text-xs mt-1 hidden font-['Abel']">Please select a category.</p>
         </div>
 
         <div>
-            <label class="block text-sm font-medium text-gray-700">Supplier</label>
-            <select id="supplierId" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500">
+            <label class="block text-sm font-medium text-gray-700 font-['Abel']">Supplier</label>
+            <select id="supplierId" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 font-['Abel']">
                 <option value="">Select a supplier</option>
                 <!-- Suppliers will be loaded here dynamically -->
             </select>
-            <p id="supplierError" class="text-red-500 text-xs mt-1 hidden">Please select a supplier.</p>
+            <p id="supplierError" class="text-red-500 text-xs mt-1 hidden font-['Abel']">Please select a supplier.</p>
         </div>
 
         <button type="submit"
-                class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md transition duration-200">
+                class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md transition duration-200 font-['Koulen']">
             Create Product
         </button>
     </form>

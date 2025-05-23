@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Abel&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body class="bg-gray-50 min-h-screen text-gray-800">
@@ -15,9 +16,11 @@
 <div class="max-w-4xl mx-auto px-4 py-8">
     <!-- Back Button -->
     <div class="mb-6">
-        <a href="/profile"
-           class="inline-flex items-center gap-2 bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-200 shadow">
-            <i class="fas fa-arrow-left"></i> Back to Profile
+        <a href="/profile" class="font-bold text-black-700 flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            <span>Back to Profile</span>
         </a>
     </div>
 
@@ -31,61 +34,61 @@
 
     <!-- Edit Profile Form -->
     <div id="editProfileForm" class="hidden bg-white shadow-lg rounded-xl p-8 border border-gray-100">
-        <h1 class="text-2xl font-bold text-indigo-700 mb-6">Edit Your Profile</h1>
+        <h1 class="text-2xl text-green-700 mb-6 font-['Koulen']">Edit Your Profile</h1>
 
         <form id="profileForm" class="space-y-6">
             <div class="grid md:grid-cols-2 gap-6">
                 <div>
-                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1 font-['Abel']">Full Name</label>
                     <input type="text" id="name" name="name" required
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
-                    <p id="nameError" class="text-red-500 text-xs mt-1 hidden">Please enter a valid name (minimum 3 characters).</p>
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 font-['Abel']">
+                    <p id="nameError" class="text-red-500 text-xs mt-1 hidden font-['Abel']">Please enter a valid name (minimum 3 characters).</p>
                 </div>
 
                 <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1 font-['Abel']">Email Address</label>
                     <input type="email" id="email" name="email" required
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
-                    <p id="emailError" class="text-red-500 text-xs mt-1 hidden">Please enter a valid email address.</p>
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 font-['Abel']">
+                    <p id="emailError" class="text-red-500 text-xs mt-1 hidden font-['Abel']">Please enter a valid email address.</p>
                 </div>
 
                 <div>
-                    <label for="contactNumber" class="block text-sm font-medium text-gray-700 mb-1">Contact Number</label>
+                    <label for="contactNumber" class="block text-sm font-medium text-gray-700 mb-1 font-['Abel']">Contact Number</label>
                     <input type="tel" id="contactNumber" name="contactNumber"
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
-                    <p id="contactError" class="text-red-500 text-xs mt-1 hidden">Please enter a valid phone number.</p>
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 font-['Abel']">
+                    <p id="contactError" class="text-red-500 text-xs mt-1 hidden font-['Abel']">Please enter a valid phone number.</p>
                 </div>
 
                 <div>
-                    <label for="address" class="block text-sm font-medium text-gray-700 mb-1">Address</label>
+                    <label for="address" class="block text-sm font-medium text-gray-700 mb-1 font-['Abel']">Address</label>
                     <input type="text" id="address" name="address"
-                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
-                    <p id="addressError" class="text-red-500 text-xs mt-1 hidden">Please enter a valid address.</p>
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 font-['Abel']">
+                    <p id="addressError" class="text-red-500 text-xs mt-1 hidden font-['Abel']">Please enter a valid address.</p>
                 </div>
             </div>
 
             <div class="mt-4">
-                <label for="password" class="block text-sm font-medium text-gray-700 mb-1">New Password (leave blank to keep current)</label>
+                <label for="password" class="block text-sm font-medium text-gray-700 mb-1 font-['Abel']">New Password (leave blank to keep current)</label>
                 <input type="password" id="password" name="password"
-                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
-                <p id="passwordError" class="text-red-500 text-xs mt-1 hidden">Password must be at least 8 characters long.</p>
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 font-['Abel']">
+                <p id="passwordError" class="text-red-500 text-xs mt-1 hidden font-['Abel']">Password must be at least 8 characters long.</p>
             </div>
 
             <div>
-                <label for="confirmPassword" class="block text-sm font-medium text-gray-700 mb-1">Confirm New Password</label>
+                <label for="confirmPassword" class="block text-sm font-medium text-gray-700 mb-1 font-['Abel']">Confirm New Password</label>
                 <input type="password" id="confirmPassword" name="confirmPassword"
-                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
-                <p id="confirmPasswordError" class="text-red-500 text-xs mt-1 hidden">Passwords do not match.</p>
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 font-['Abel']">
+                <p id="confirmPasswordError" class="text-red-500 text-xs mt-1 hidden font-['Abel']">Passwords do not match.</p>
             </div>
 
             <div class="flex flex-wrap gap-4 pt-4">
                 <button type="submit"
-                        class="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white py-2 px-5 rounded-lg shadow transition duration-200">
+                        class="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white py-2 px-5 rounded-lg shadow transition duration-200 font-['Koulen']">
                     <i class="fas fa-save"></i> Save Changes
                 </button>
 
                 <button type="button" onclick="window.location.href='/profile'"
-                        class="flex items-center gap-2 bg-gray-400 hover:bg-gray-500 text-white py-2 px-5 rounded-lg shadow transition duration-200">
+                        class="flex items-center gap-2 bg-gray-400 hover:bg-gray-500 text-white py-2 px-5 rounded-lg shadow transition duration-200 font-['Koulen']">
                     <i class="fas fa-times"></i> Cancel
                 </button>
             </div>

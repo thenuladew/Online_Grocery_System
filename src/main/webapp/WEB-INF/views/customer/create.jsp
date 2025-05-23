@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
-    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Abel&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Animated Background */
@@ -61,7 +61,7 @@
     <div class="mb-4 text-left">
         <label class="block text-sm font-medium text-gray-700">Name</label>
         <input type="text" id="name"
-               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 font-['Abel']"
                placeholder="John Doe">
         <p id="nameError" class="text-red-500 text-xs mt-1 hidden">Enter a valid full name.</p>
     </div>
@@ -70,17 +70,25 @@
     <div class="mb-4 text-left">
         <label class="block text-sm font-medium text-gray-700">Email</label>
         <input type="email" id="email"
-               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 font-['Abel']"
                placeholder="jane@example.com">
         <p id="emailError" class="text-red-500 text-xs mt-1 hidden">Enter a valid email address.</p>
     </div>
 
     <!-- Password Input -->
-    <div class="mb-4 text-left">
+    <div class="mb-4 text-left relative">
         <label class="block text-sm font-medium text-gray-700">Password</label>
         <input type="password" id="password"
-               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 font-['Abel'] pr-12"
                placeholder="••••••••">
+        <button type="button" id="togglePassword" tabindex="-1"
+                class="absolute right-3 top-9 text-gray-400 hover:text-green-700 focus:outline-none"
+                aria-label="Toggle password visibility">
+            <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+        </button>
         <p id="passwordError" class="text-red-500 text-xs mt-1 hidden">Password must be at least 6 characters.</p>
     </div>
 
@@ -88,7 +96,7 @@
     <div class="mb-4 text-left">
         <label class="block text-sm font-medium text-gray-700">Contact Number</label>
         <input type="text" id="contactNumber"
-               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 font-['Abel']"
                placeholder="+1234567890">
         <p id="contactError" class="text-red-500 text-xs mt-1 hidden">Enter a valid contact number.</p>
     </div>
@@ -97,7 +105,7 @@
     <div class="mb-4 text-left">
         <label class="block text-sm font-medium text-gray-700">Address</label>
         <input type="text" id="address"
-               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 font-['Abel']"
                placeholder="123 Main St, City">
         <p id="addressError" class="text-red-500 text-xs mt-1 hidden">Enter a valid address.</p>
     </div>
@@ -205,6 +213,19 @@
                 document.getElementById("loading").classList.add("hidden");
             });
     }
+
+    // Password toggle logic
+    const passwordInput = document.getElementById('password');
+    const togglePassword = document.getElementById('togglePassword');
+    const eyeIcon = document.getElementById('eyeIcon');
+    let passwordVisible = false;
+    togglePassword.addEventListener('click', function() {
+        passwordVisible = !passwordVisible;
+        passwordInput.type = passwordVisible ? 'text' : 'password';
+        eyeIcon.innerHTML = passwordVisible
+            ? `<path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13.875 18.825A10.05 10.05 0 0112 19c-4.477 0-8.268-2.943-9.542-7a9.956 9.956 0 012.042-3.292m3.087-2.727A9.956 9.956 0 0112 5c4.477 0 8.268 2.943 9.542 7a9.956 9.956 0 01-4.421 5.568M15 12a3 3 0 11-6 0 3 3 0 016 0z\" /><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 3l18 18\" />`
+            : `<path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15 12a3 3 0 11-6 0 3 3 0 016 0z\" />\n<path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z\" />`;
+    });
 </script>
 
 </body>

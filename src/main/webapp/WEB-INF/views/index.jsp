@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <title>Products</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Abel&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
-
-<jsp:include page="common/loader.jsp" />
 
 <style>
     .header {
@@ -16,37 +15,9 @@
         top: 0;
         z-index: 100;
     }
-    #loaderOverlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: #10b981;
-        z-index: 9999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: opacity 0.7s ease;
-    }
-    #loaderOverlay.fade-out {
-        opacity: 0;
-        pointer-events: none;
-    }
-    #mainContent {
-        opacity: 0;
-        transition: opacity 0.7s ease;
-    }
-    #mainContent.visible {
-        opacity: 1;
-    }
 </style>
 
-<div id="loaderOverlay">
-    <jsp:include page="common/loader.jsp" />
-</div>
-
-<div id="mainContent" style="display:none;">
+<div id="mainContent">
 
 <div class="header">
     <jsp:include page="common/navbarDash.jsp"/>
@@ -54,64 +25,67 @@
 
 
 <div class="max-w-6xl mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold mb-6 text-green-700">All Products</h1>
+    <!-- White Box Container -->
+    <div class="bg-white rounded-2xl shadow-md p-8 mb-8">
+        <h1 class="text-3xl text-[#2B2B2B]-700 mb-4 font-['Koulen']">Products</h1>
 
-    <div class="flex space-x-4 mb-6">
-        <!-- Category Dropdown -->
-        <div class="relative">
-            <button id="categoryDropdownButton" 
-                    class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition flex items-center">
-                Filter by Category
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                </svg>
-            </button>
-            <div id="categoryDropdown" class="hidden absolute z-10 mt-1 w-48 bg-white rounded-md shadow-lg">
-                <div class="py-1">
-                    <a href="#" onclick="filterByCategory('all')" class="block px-4 py-2 text-gray-800 hover:bg-green-100">All Categories</a>
-                    <a href="#" onclick="filterByCategory('Meat & Fish')" class="block px-4 py-2 text-gray-800 hover:bg-green-100">Meat & Fish</a>
-                    <a href="#" onclick="filterByCategory('Grains & Bread')" class="block px-4 py-2 text-gray-800 hover:bg-green-100">Grains & Bread</a>
-                    <a href="#" onclick="filterByCategory('Fruits')" class="block px-4 py-2 text-gray-800 hover:bg-green-100">Fruits</a>
-                    <a href="#" onclick="filterByCategory('Vegetables')" class="block px-4 py-2 text-gray-800 hover:bg-green-100">Vegetables</a>
-                    <a href="#" onclick="filterByCategory('Dairy & Eggs')" class="block px-4 py-2 text-gray-800 hover:bg-green-100">Dairy & Eggs</a>
-                    <a href="#" onclick="filterByCategory('Condiments')" class="block px-4 py-2 text-gray-800 hover:bg-green-100">Condiments</a>
+        <div class="flex justify-end space-x-4 mb-6">
+            <!-- Category Dropdown -->
+            <div class="relative">
+                <button id="categoryDropdownButton" 
+                        class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition flex items-center font-['Koulen']">
+                    Select Category
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <div id="categoryDropdown" class="hidden absolute z-10 mt-1 w-48 bg-white rounded-md shadow-lg">
+                    <div class="py-1">
+                        <a href="#" onclick="filterByCategory('all')" class="block px-4 py-2 text-gray-800 hover:bg-green-100">All Categories</a>
+                        <a href="#" onclick="filterByCategory('Meat & Fish')" class="block px-4 py-2 text-gray-800 hover:bg-green-100">Meat & Fish</a>
+                        <a href="#" onclick="filterByCategory('Grains & Bread')" class="block px-4 py-2 text-gray-800 hover:bg-green-100">Grains & Bread</a>
+                        <a href="#" onclick="filterByCategory('Fruits')" class="block px-4 py-2 text-gray-800 hover:bg-green-100">Fruits</a>
+                        <a href="#" onclick="filterByCategory('Vegetables')" class="block px-4 py-2 text-gray-800 hover:bg-green-100">Vegetables</a>
+                        <a href="#" onclick="filterByCategory('Dairy & Eggs')" class="block px-4 py-2 text-gray-800 hover:bg-green-100">Dairy & Eggs</a>
+                        <a href="#" onclick="filterByCategory('Condiments')" class="block px-4 py-2 text-gray-800 hover:bg-green-100">Condiments</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sorting Dropdown -->
+            <div class="relative">
+                <button id="sortDropdownButton" 
+                class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition flex items-center font-['Koulen']">
+                    Sort Products
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <div id="sortDropdown" class="hidden absolute z-10 mt-1 w-48 bg-white rounded-md shadow-lg">
+                    <div class="py-1">
+                        <a href="#" onclick="sortProducts('price')" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">By Price (Low to High)</a>
+                        <a href="#" onclick="sortProducts('price-desc')" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">By Price (High to Low)</a>
+                        <a href="#" onclick="sortProducts('name')" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">By Name (A-Z)</a>
+                        <a href="#" onclick="sortProducts('name-desc')" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">By Name (Z-A)</a>
+                        <a href="#" onclick="resetSort()" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Reset</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Sorting Dropdown -->
-        <div class="relative">
-            <button id="sortDropdownButton" 
-                    class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition flex items-center">
-                Sort Products
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                </svg>
-            </button>
-            <div id="sortDropdown" class="hidden absolute z-10 mt-1 w-48 bg-white rounded-md shadow-lg">
-                <div class="py-1">
-                    <a href="#" onclick="sortProducts('price')" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">By Price (Low to High)</a>
-                    <a href="#" onclick="sortProducts('price-desc')" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">By Price (High to Low)</a>
-                    <a href="#" onclick="sortProducts('name')" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">By Name (A-Z)</a>
-                    <a href="#" onclick="sortProducts('name-desc')" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">By Name (Z-A)</a>
-                    <a href="#" onclick="resetSort()" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Reset</a>
-                </div>
-            </div>
+        <!-- Loading Spinner -->
+        <div id="loading" class="text-center text-green-600 font-semibold">
+            Loading products...
         </div>
-    </div>
 
-    <!-- Loading Spinner -->
-    <div id="loading" class="text-center text-green-600 font-semibold">
-        Loading products...
-    </div>
+        <!-- Product Grid -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 hidden">
+        </div>
 
-    <!-- Product Grid -->
-    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 hidden">
-    </div>
-
-    <!-- No Results Message -->
-    <div id="noResults" class="text-center text-gray-500 py-8 hidden">
-        No products match your search criteria.
+        <!-- No Results Message -->
+        <div id="noResults" class="text-center text-gray-500 py-8 hidden">
+            No products match your search criteria.
+        </div>
     </div>
 
     <jsp:include page="feedbacks.jsp"/>
@@ -182,14 +156,14 @@
                 "<h2 class=\"text-xl font-semibold text-gray-800 mb-2\">" + product.name + "</h2>" +
                 "<p class=\"text-sm text-gray-600 mb-2\">" + product.description + "</p>" +
                 "<p class=\"text-sm text-gray-500 mb-1\">Category: " + (product.category || "General") + "</p>" +
-                "<p class=\"font-bold text-green-600 mb-1\">LKR " + product.price.toLocaleString('en-US', {minimumFractionDigits: 2}) + "</p>" +
+                "<p class=\"font-bold text-green-600 mb-1 text-lg\">LKR " + product.price.toLocaleString('en-US', {minimumFractionDigits: 2}) + "</p>" +
                 "<p class=\"text-sm mb-4\">" + stockStatus + "</p>";
 
             // Add to Cart Button - disabled if out of stock
             const buttonDisabled = product.inStockQuantity === 0;
             const buttonClass = buttonDisabled 
-                ? "mt-2 w-full bg-gray-400 text-white py-2 px-4 rounded cursor-not-allowed"
-                : "mt-2 w-full bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition duration-200";
+                ? "mt-2 w-full bg-gray-400 text-white py-2 px-4 rounded cursor-not-allowed font-['Koulen'] text-lg"
+                : "mt-2 w-full bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition duration-200 font-['Koulen'] text-lg";
 
             productCard.innerHTML +=
                 "<button " + (buttonDisabled ? "disabled" : "") + " " +
@@ -252,6 +226,12 @@
     document.getElementById('categoryDropdownButton').addEventListener('click', function(e) {
         e.stopPropagation();
         document.getElementById('categoryDropdown').classList.toggle('hidden');
+    });
+
+    // Toggle sort dropdown visibility
+    document.getElementById('sortDropdownButton').addEventListener('click', function(e) {
+        e.stopPropagation();
+        document.getElementById('sortDropdown').classList.toggle('hidden');
     });
 
     // Close dropdowns when clicking outside
@@ -317,24 +297,6 @@
         const sortedProducts = mergeSort([...allProducts], key);
         renderProducts(sortedProducts);
     }
-</script>
-
-<script>
-window.addEventListener('DOMContentLoaded', function() {
-    const loader = document.getElementById('loaderOverlay');
-    const mainContent = document.getElementById('mainContent');
-    setTimeout(function() {
-        loader.classList.add('fade-out');
-        setTimeout(function() {
-            loader.style.background = 'transparent';
-            loader.style.display = 'none';
-            mainContent.style.display = '';
-            setTimeout(function() {
-                mainContent.classList.add('visible');
-            }, 10);
-        }, 700); // match the CSS transition
-    }, 3000); // 3 seconds
-});
 </script>
 
 </body>
