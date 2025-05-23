@@ -6,29 +6,32 @@
     <title>All Staff</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Abel&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-100 min-h-screen">
 
-
+<jsp:include page="../common/navbarAdmin.jsp"/>
 
 <div class="max-w-7xl mx-auto px-4 py-8">
     <!-- Back Button -->
     <div class="mb-6">
-        <a href="/admin"
-           class="inline-block bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-700 transition duration-200">
-            &larr; Back to Dashboard
+        <a href="/admin" class="font-bold text-black-700 flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            <span>Back to Dashboard</span>
         </a>
     </div>
 
     <!-- Search Bar -->
     <div class="flex justify-between items-center mb-6">
-        <h1 class="text-3xl font-bold text-green-700">All Staff</h1>
+        <h1 class="text-3xl text-green-700 font-['Koulen']">All Staff</h1>
 
         <input type="text" id="searchInput" placeholder="Search by Name or NIC"
-               class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 w-1/3">
+               class="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 w-1/3 font-['Abel']">
 
         <a href="/create-staff"
-                class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded transition duration-200">
+                class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded transition duration-200 font-['Koulen']">
            Create Staff Member
         </a>
     </div>
@@ -36,13 +39,13 @@
     <!-- Export Button -->
     <div class="mb-4 text-right">
         <button onclick="generatePDF()"
-                class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded transition duration-200">
+                class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded transition duration-200 font-['Koulen']">
             Generate PDF
         </button>
     </div>
 
     <!-- Loading State -->
-    <div id="loading" class="text-center text-green-600 font-semibold mb-4">
+    <div id="loading" class="text-center text-green-600 mb-4 font-['Abel']">
         Loading staff...
     </div>
 
@@ -51,15 +54,15 @@
         <table id="staffTable" class="min-w-full bg-white shadow-md rounded-lg hidden">
             <thead class="bg-green-100 text-green-800">
             <tr>
-                <th class="py-3 px-4 text-left">Name</th>
-                <th class="py-3 px-4 text-left">NIC Number</th>
-                <th class="py-3 px-4 text-left">Joined Date</th>
-                <th class="py-3 px-4 text-left">Salary</th>
-                <th class="py-3 px-4 text-left">Contact</th>
-                <th class="py-3 px-4 text-left">Actions</th>
+                <th class="py-3 px-4 text-left font-['Abel']">Name</th>
+                <th class="py-3 px-4 text-left font-['Abel']">NIC Number</th>
+                <th class="py-3 px-4 text-left font-['Abel']">Joined Date</th>
+                <th class="py-3 px-4 text-left font-['Abel']">Salary</th>
+                <th class="py-3 px-4 text-left font-['Abel']">Contact</th>
+                <th class="py-3 px-4 text-left font-['Abel']">Actions</th>
             </tr>
             </thead>
-            <tbody id="staffBody">
+            <tbody id="staffBody" class="font-['Abel']">
             <!-- Rows will be inserted here -->
             </tbody>
         </table>
@@ -119,7 +122,7 @@
                 "<td class='py-3 px-4 border-b'>" + escapeHtml(staff.name) + "</td>" +
                 "<td class='py-3 px-4 border-b'>" + escapeHtml(staff.nicNumber) + "</td>" +
                 "<td class='py-3 px-4 border-b'>" + escapeHtml(staff.joinedDate) + "</td>" +
-                "<td class='py-3 px-4 border-b'>$" + parseFloat(staff.salary).toFixed(2) + "</td>" +
+                "<td class='py-3 px-4 border-b'>LKR " + parseFloat(staff.salary).toFixed(2) + "</td>" +
                 "<td class='py-3 px-4 border-b'>" + escapeHtml(staff.contactNumber) + "</td>" +
                 "<td class='py-3 px-4 border-b'>" +
                 "<div class='flex space-x-2'>" +

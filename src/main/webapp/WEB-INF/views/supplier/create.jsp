@@ -5,65 +5,66 @@
     <meta charset="UTF-8">
     <title>Create Supplier</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Abel&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
 
 <div class="w-full max-w-2xl bg-white rounded-lg shadow-md p-6">
-    <h1 class="text-2xl font-bold mb-6 text-green-700">Create New Supplier</h1>
+    <h1 class="text-2xl text-green-700 mb-6 font-['Koulen']">Create New Supplier</h1>
 
     <form id="supplierForm" class="space-y-4">
         <div>
-            <label class="block text-sm font-medium text-gray-700">Name</label>
+            <label class="block text-sm font-medium text-gray-700 font-['Abel']">Name</label>
             <input type="text" id="name" required
-                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 font-['Abel']"
                    placeholder="John Doe">
-            <p id="nameError" class="text-red-500 text-xs mt-1 hidden">Enter a valid name.</p>
+            <p id="nameError" class="text-red-500 text-xs mt-1 hidden font-['Abel']">Enter a valid name.</p>
         </div>
 
         <div>
-            <label class="block text-sm font-medium text-gray-700">Contact Number</label>
+            <label class="block text-sm font-medium text-gray-700 font-['Abel']">Contact Number</label>
             <input type="text" id="contactNumber" required
-                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 font-['Abel']"
                    placeholder="+123456789">
-            <p id="contactError" class="text-red-500 text-xs mt-1 hidden">Enter a valid contact number.</p>
+            <p id="contactError" class="text-red-500 text-xs mt-1 hidden font-['Abel']">Enter a valid contact number.</p>
         </div>
 
         <div>
-            <label class="block text-sm font-medium text-gray-700">Address</label>
+            <label class="block text-sm font-medium text-gray-700 font-['Abel']">Address</label>
             <input type="text" id="address" required
-                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 font-['Abel']"
                    placeholder="Main St 123">
-            <p id="addressError" class="text-red-500 text-xs mt-1 hidden">Enter a valid address.</p>
+            <p id="addressError" class="text-red-500 text-xs mt-1 hidden font-['Abel']">Enter a valid address.</p>
         </div>
 
         <div>
-            <label class="block text-sm font-medium text-gray-700">Company Name</label>
+            <label class="block text-sm font-medium text-gray-700 font-['Abel']">Company Name</label>
             <input type="text" id="companyName" required
-                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 font-['Abel']"
                    placeholder="ABC Groceries">
-            <p id="companyError" class="text-red-500 text-xs mt-1 hidden">Enter a valid company name.</p>
+            <p id="companyError" class="text-red-500 text-xs mt-1 hidden font-['Abel']">Enter a valid company name.</p>
         </div>
 
         <div>
-            <label class="block text-sm font-medium text-gray-700">Business Registration Number</label>
+            <label class="block text-sm font-medium text-gray-700 font-['Abel']">Business Registration Number</label>
             <input type="text" id="businessRegistrationNumber" required
-                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500"
+                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 font-['Abel']"
                    placeholder="BRN123456">
-            <p id="brnError" class="text-red-500 text-xs mt-1 hidden">Enter a valid BRN (e.g., BRN123456).</p>
+            <p id="brnError" class="text-red-500 text-xs mt-1 hidden font-['Abel']">Enter a valid BRN (e.g., BRN123456).</p>
         </div>
 
         <div>
-            <label class="block text-sm font-medium text-gray-700">Added By Staff Member</label>
+            <label class="block text-sm font-medium text-gray-700 font-['Abel']">Added By Staff Member</label>
             <select id="staffId" required
-                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500">
+                   class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-green-500 focus:border-green-500 font-['Abel']">
                 <option value="">Select a staff member</option>
                 <!-- Staff members will be loaded here dynamically -->
             </select>
-            <p id="staffError" class="text-red-500 text-xs mt-1 hidden">Please select a staff member.</p>
+            <p id="staffError" class="text-red-500 text-xs mt-1 hidden font-['Abel']">Please select a staff member.</p>
         </div>
 
         <button type="submit"
-                class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md transition duration-200">
+                class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md transition duration-200 font-['Koulen']">
             Create Supplier
         </button>
     </form>

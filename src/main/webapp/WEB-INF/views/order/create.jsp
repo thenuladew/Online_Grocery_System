@@ -6,6 +6,7 @@
     <title>Create Order</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Abel&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-50 min-h-screen">
 
@@ -14,9 +15,11 @@
 <div class="max-w-5xl mx-auto px-4 py-8">
     <!-- Back Button -->
     <div class="mb-6">
-        <a href="/cart"
-           class="inline-flex items-center bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition duration-200 shadow-sm">
-            <i class="fas fa-arrow-left mr-2"></i> Back to Cart
+        <a href="/cart" class="font-bold text-black-700 flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            <span>Back to Cart</span>
         </a>
     </div>
 

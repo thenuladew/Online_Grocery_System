@@ -5,18 +5,21 @@
     <meta charset="UTF-8">
     <title>All Products</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Abel&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body class="bg-gray-100 min-h-screen">
 
-<jsp:include page="../common/navbar.jsp"/>
+    <jsp:include page="../common/navbarAdmin.jsp"/>
 
 <div class="max-w-7xl mx-auto px-4 py-8">
     <!-- Back Button -->
     <div class="mb-6">
-        <a href="/admin"
-           class="inline-block bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-700 transition duration-200">
-            &larr; Back to Dashboard
+        <a href="/admin" class="font-bold text-black-700 flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            <span>Back to Dashboard</span>
         </a>
     </div>
 

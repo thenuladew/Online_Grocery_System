@@ -14,8 +14,9 @@
     }
 </style>
 <div class="p-4">
-    <div class="flex justify-between items-center mb-4">
-        <button type="button" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded flex items-center" onclick="openCreateModal()">
+    <h1 class="text-3xl text-[#2B2B2B]-700 mb-4 font-['Koulen']">Customer Feedback</h1>
+    <div class="flex justify-end items-center mb-4">
+        <button type="button" class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition flex items-center font-['Koulen']" onclick="openCreateModal()">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd" />
             </svg>
@@ -77,7 +78,7 @@
                 <button type="button" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-medium py-2 px-4 rounded mr-2" onclick="closeModal('createFeedbackModal')">
                     Cancel
                 </button>
-                <button type="button" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded" onclick="createFeedback()">
+                <button type="button" class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded" onclick="createFeedback()">
                     Submit
                 </button>
             </div>
@@ -127,7 +128,7 @@
                 <button type="button" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-medium py-2 px-4 rounded mr-2" onclick="closeModal('editFeedbackModal')">
                     Cancel
                 </button>
-                <button type="button" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded" onclick="updateFeedback()">
+                <button type="button" class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded" onclick="updateFeedback()">
                     Update
                 </button>
             </div>
@@ -229,7 +230,7 @@
                     "<div class=\"p-4\">" +
                     "<div class=\"flex justify-between\">" +
                     "<div>" +
-                    "<h5 class=\"text-lg font-medium text-blue-600\">" + feedback.product.name + "</h5>" +
+                    "<h5 class=\"text-lg font-medium text-[#008637]\">" + feedback.product.name + "</h5>" +
                     "<h6 class=\"text-sm text-gray-500 mb-1\">" + feedback.product.category + "</h6>" +
                     "<div class=\"mb-2 flex text-yellow-400\">" +
                     generateStarRating(feedback.rating) +

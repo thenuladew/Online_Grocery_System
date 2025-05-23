@@ -1,6 +1,7 @@
-1|Ambewela Fresh Milk 180ml|Ambewela Fresh Milk 180ml|https://www.stassenfoods.com/wp-content/uploads/2024/04/ambewela_-full-cream-milk-180ml.jpg|8|140.0|Dairy & Eggs|1
-2|Organic Oranges|Fresh organic apples from local farms|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRoVlbiEoAA15yclvKJBO5OBS3Yd0xB9f59w&s|494|2.99|Fruits|1
-3|Grapes|Fresh organic apples from local farms|https://hips.hearstapps.com/hmg-prod/images/766/grapes-main-1506688521.jpg?crop=0.848xw:1xh;center,top&resize=1200:*|50|2.99|Fruits|2
+1|Ambewela Fresh Milk 180ml|Ambewela Fresh Milk 180ml|https://www.stassenfoods.com/wp-content/uploads/2024/04/ambewela_-full-cream-milk-180ml.jpg|3|140.0|Dairy & Eggs|1
+2|Organic Oranges|Fresh organic apples from local farms|https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRoVlbiEoAA15yclvKJBO5OBS3Yd0xB9f59w&s|491|2.99|Fruits|1
+3|Grapes|Fresh organic apples from local farms|https://hips.hearstapps.com/hmg-prod/images/766/grapes-main-1506688521.jpg?crop=0.848xw:1xh;center,top&resize=1200:*|50|2.99|Fruits|1
 4|Nadu Rice 5kg Bulk|Araliya nadu rice 5kg|https://objectstorage.ap-mumbai-1.oraclecloud.com/n/softlogicbicloud/b/cdn/o/products/600-600/113859--01--1644720573.jpeg|47|1150.0|Grains & Bread|1
 5|White Sugar|White Sugar - 100g|https://img.livestrong.com/-/clsd/getty/a61a26f4c6584644b8a367aeeb9d0fe2.jpg|50|60.3|Condiments|1
-6|Chicken Breast|Chicken breast - 500g|https://www.foodcoachforme.com/wp-content/uploads/2020/03/chicken-with-garlic-and-rosemary-scaled.jpg|3|922.5|Meat & Fish|1
+6|Chicken Breast|Chicken breast - 500g|https://www.foodcoachforme.com/wp-content/uploads/2020/03/chicken-with-garlic-and-rosemary-scaled.jpg|2|922.5|Meat & Fish|1
+7|Carrots|Fresh carrots|https://images.squarespace-cdn.com/content/v1/5de5df7f9f40c13aa6a8b579/1579656596851-2C3FEKRQPB2RC0RII0OZ/Boat+harbour-0829.jpg|44|28.0|Vegetables|1

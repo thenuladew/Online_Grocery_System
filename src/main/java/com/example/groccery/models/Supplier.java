@@ -13,7 +13,7 @@ public class Supplier {
     // Default constructor
     public Supplier() {}
 
-    // Parameterized constructor (all fields)
+    // Parameterized constructor (all fields) staffId added
     public Supplier(String id, String name, String contactNumber, String address,
                     String companyName, String businessRegistrationNumber, String staffId) {
         this.id = id;
