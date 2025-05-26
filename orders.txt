@@ -1,5 +1,5 @@
-1;Poojana;janudahewa@gmail.com;88/8 , Isuru Mawatha, Deniyaya, Matara;Delivered;2025-05-22;1,1|2,2|6,1
-2;Poojana;janudahewa@gmail.com;88/8 , Isuru Mawatha, Deniyaya, Matara;Shipped;2025-05-22;1,1|2,1
-3;Poojana;janudahewa@gmail.com;88/8 , Isuru Mawatha, Deniyaya, Matara;Cancelled;2025-05-23;3,1|5,1
+1;Poojana;janudahewa@gmail.com;88/8 , Isuru Mawatha, Deniyaya, Matara;Pending;2025-05-22;1,1|2,2|6,1
+2;Poojana;janudahewa@gmail.com;88/8 , Isuru Mawatha, Deniyaya, Matara;Pending;2025-05-22;1,1|2,1
+3;Poojana;janudahewa@gmail.com;88/8 , Isuru Mawatha, Deniyaya, Matara;Processing;2025-05-23;3,1|5,1
 4;Poojana;janudahewa@gmail.com;88/8 , Isuru Mawatha, Deniyaya, Matara;Pending;2025-05-23;3,1
 5;Poojana;janudahewa@gmail.com;88/8 , Isuru Mawatha, Deniyaya, Matara;Pending;2025-05-23;3,1
