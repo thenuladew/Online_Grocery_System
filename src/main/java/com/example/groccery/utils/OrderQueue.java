@@ -6,14 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.io.*;
 import java.nio.file.*;
-import java.util.*;
 
 @Component
 public class OrderQueue {
 
     private static final String QUEUE_FILE = "order_queue.txt";
     private final OrderRepo orderRepo;
-    private final Queue<String> orderIds = new LinkedList<>();
+    private final SimpleQueue orderIds = new SimpleQueue();
 
     @Autowired
     public OrderQueue(OrderRepo orderRepo) {
@@ -27,13 +26,13 @@ public class OrderQueue {
 
     public void enqueue(String orderId) throws IOException {
         if (orderRepo.findById(orderId).isPresent()) {
-            orderIds.offer(orderId);
+            orderIds.enqueue(orderId);
             saveQueueToFile();
         }
     }
 
     public String dequeue() throws IOException {
-        String orderId = orderIds.poll();
+        String orderId = orderIds.dequeue();
         if (orderId != null) {
             saveQueueToFile();
         }
@@ -44,26 +43,27 @@ public class OrderQueue {
         return orderIds.contains(orderId);
     }
 
-    public List<String> getAllOrdersInQueue() {
-        return new ArrayList<>(orderIds);
+    public String[] getAllOrdersInQueue() {
+        return orderIds.toArray();
     }
 
     private void loadQueueFromFile() throws IOException {
         Path path = Paths.get(QUEUE_FILE);
         if (!Files.exists(path)) Files.createFile(path);
 
-        List<String> lines = Files.readAllLines(path);
+        orderIds.clear();
+        java.util.List<String> lines = Files.readAllLines(path);
         if (!lines.isEmpty()) {
             String[] ids = lines.get(0).split(",");
-            orderIds.clear();
             for (String id : ids) {
-                if (!id.trim().isEmpty()) orderIds.offer(id.trim());
+                if (!id.trim().isEmpty()) orderIds.enqueue(id.trim());
             }
         }
     }
 
     private void saveQueueToFile() throws IOException {
-        List<String> line = Arrays.asList(String.join(",", orderIds));
-        Files.write(Paths.get(QUEUE_FILE), line);
+        String[] arr = orderIds.toArray();
+        String line = String.join(",", arr);
+        Files.write(Paths.get(QUEUE_FILE), java.util.Collections.singletonList(line));
     }
 }

@@ -7,3 +7,4 @@
 8|Good quality|4|6|6
 9|Resonable price|4|4|3
 10|Fresh!|5|2|3
+11|Nice|5|3|3

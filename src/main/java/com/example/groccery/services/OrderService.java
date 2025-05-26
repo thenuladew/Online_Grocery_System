@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.Arrays;
 
 @Service
 public class OrderService {
@@ -99,6 +100,6 @@ public class OrderService {
     }
 
     public List<String> getAllQueuedOrderIds() {
-        return orderQueue.getAllOrdersInQueue();
+        return Arrays.asList(orderQueue.getAllOrdersInQueue());
     }
 }

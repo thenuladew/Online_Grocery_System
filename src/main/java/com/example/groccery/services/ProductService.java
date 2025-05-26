@@ -5,6 +5,7 @@ import com.example.groccery.dtos.ProductDTOs;
 import com.example.groccery.models.Product;
 import com.example.groccery.repos.ProductRepo;
 import com.example.groccery.utils.ProductsMergeSort;
+import com.example.groccery.utils.SimpleProductList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -56,7 +57,13 @@ public class ProductService {
 
     public List<Product> getAllProductsSorted(String sortBy) throws IOException {
         List<Product> products = productRepo.findAll();
-        ProductsMergeSort.sort(products, sortBy);
-        return products;
+        SimpleProductList simpleList = new SimpleProductList();
+        for (Product p : products) {
+            simpleList.add(p);
+        }
+        ProductsMergeSort.sort(simpleList, sortBy);
+        Product[] sortedArray = simpleList.toArray();
+        // Convert back to List<Product>
+        return java.util.Arrays.asList(sortedArray);
     }
 }
