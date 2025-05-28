@@ -22,7 +22,11 @@ public class ProductsMergeSort {
         int n = right - left + 1;
         Product[] temp = new Product[n];
         for (int i = 0; i < n; i++) temp[i] = list.get(left + i);
-        int i = 0, j = mid - left + 1, k = left;
+
+        int i = 0;
+        int j = mid - left + 1;
+        int k = left;
+        
         while (i <= mid - left && j <= right - left) {
             if (compare(temp[i], temp[j], sortBy) <= 0) {
                 list.set(k++, temp[i++]);
