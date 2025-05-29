@@ -43,13 +43,21 @@ public class ProductsMergeSort {
     }
 
     private static int compare(Product a, Product b, String sortBy) {
-        switch (sortBy.toLowerCase()) {
+        boolean descending = sortBy.endsWith("-desc");
+        String actualSortBy = descending ? sortBy.substring(0, sortBy.length() - 5) : sortBy;
+        
+        int comparison;
+        switch (actualSortBy.toLowerCase()) {
             case "price":
-                return Double.compare(a.getPrice(), b.getPrice());
+                comparison = Double.compare(a.getPrice(), b.getPrice());
+                break;
             case "category":
-                return a.getCategory().compareTo(b.getCategory());
+                comparison = a.getCategory().compareTo(b.getCategory());
+                break;
             default:
-                return a.getName().compareTo(b.getName());
+                comparison = a.getName().compareTo(b.getName());
         }
+        
+        return descending ? -comparison : comparison;
     }
 }
