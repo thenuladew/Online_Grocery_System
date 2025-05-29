@@ -5,7 +5,7 @@ import com.example.groccery.models.Product;
 public class SimpleProductList {
     private Product[] data;
     private int size;
-    private static final int INITIAL_CAPACITY = 100;
+    private static final int INITIAL_CAPACITY = 10;
 
     public SimpleProductList() {
         data = new Product[INITIAL_CAPACITY];
